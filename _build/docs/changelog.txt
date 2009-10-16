@@ -1,0 +1,9 @@
+Component Template Change Log
+----------------
+1.0.1
+-----
+Added examples of both kinds of validators and resolvers
+Added comments
+Added examples of readme, license, and user-input
+
+1.0.0  First full release
