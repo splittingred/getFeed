@@ -1,15 +1,5 @@
-The file shows the changes in this release of component-template
+The file shows the changes in this release of getFeed
 
-1.0.2  ($LastChangedRevision: 547 $, $LastChangedDate: 2009-10-16 12:54:00 -0700 (Fri, 16 Oct 2009) $)
+1.0.0  ($LastChangedRevision$, $LastChangedDate$)
 ====================================
-- Updated changelog.txt format and properties
-
-1.0.1  (LastChangedRevision: 547, LastChangedDate: 2009-10-16 12:54:00 -0700 (Fri, 16 Oct 2009))
-====================================
-- Added examples of both kinds of validators and resolvers
-- Added comments
-- Added examples of readme, license, and user-input
-
-1.0.0  (LastChangedRevision: 504, LastChangedDate: 2009-09-07 21:16:00 -0700 (Mon, 7 Sep 2009))
-====================================
-- First full release
+- Initial commit of getFeed snippet.

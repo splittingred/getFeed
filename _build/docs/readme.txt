@@ -1,14 +1,10 @@
 /**
- * @package component-template
+ * @package getfeed
  */
 
 File: Readme.txt
-Snippet: component-template
-Compatibility: MODx Revolution
+Snippet: getFeed
+Compatibility: MODx Revolution 2.0.0
 
 
-Your readme.txt content goes here.
-
-It will be shown to the user on install and will be
-available for viewing in Package Management and
-in the Extras Repository.
+Simple snippet for retrieving and iterating through RSS feed items from a feed url and producing output via an itemTpl.
