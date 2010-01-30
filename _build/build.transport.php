@@ -3,8 +3,8 @@
  * Component Template
  *
  * @package component-template
- * @version 1.0.1
- * @release ga
+ * @version 1.0.2
+ * @release beta
  * @author Test <test@test.com>
  */
 $mtime = microtime();
@@ -38,7 +38,7 @@ $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
 /* Set Package Name  */
 $name = 'component-template';
-$version = '1.0.1';
+$version = '1.0.2';
 $release = 'beta';
 
 /* Load the Package Builder and create the package */
@@ -55,8 +55,8 @@ $builder->registerNamespace('component-template',false,true);
  * as we do here: */
 
 $c= $modx->newObject('modSnippet');
-$c->set('name', 'component-template');
-$c->set('description', '<strong>1.0</strong> This is a component for MODx Revolution');
+$c->set('name', $name);
+$c->set('description', "<strong>{$version}-{$release}</strong> {$name} for MODx Revolution");
 $c->set('category', 0);
 $c->set('snippet', file_get_contents($sources['assets'] . 'snippet.component-source.php'));
 

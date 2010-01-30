@@ -3,8 +3,8 @@
  * Component Template Example Script Resolver
  *
  * @package component-template
- * @version 1.0.1
- * @release ga
+ * @version 1.0.2
+ * @release beta
  * @author Test <test@test.com>
  */
 
