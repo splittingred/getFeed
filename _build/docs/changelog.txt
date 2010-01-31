@@ -1,5 +1,7 @@
 The file shows the changes in this release of getFeed
 
-1.0.0  ($LastChangedRevision$, $LastChangedDate$)
+1.0.0-beta  ($LastChangedRevision$, $LastChangedDate$)
 ====================================
+- Added getPage compatibility via properties limit, offset, and totalVar.
+- Added default properties.
 - Initial commit of getFeed snippet.
