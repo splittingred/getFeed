@@ -1,0 +1,7 @@
+Changelog for getFeed
+
+getFeed 1.0.0
+====================================
+- Added getPage compatibility via properties limit, offset, and totalVar.
+- Added default properties.
+- Initial commit of getFeed snippet.

@@ -37,5 +37,10 @@ if (!empty($url) && $modx->getService('rss', 'xmlrss.modRSSParser')) {
         $modx->log(modX::LOG_LEVEL_ERROR, "Error parsing RSS feed at {$url}", '', 'getFeed', __FILE__, __LINE__);
     }
 }
-return implode("\n", $output);
-?>
+$output = implode("\n", $output);
+
+if (!empty($scriptProperties['toPlaceholder'])) {
+    $modx->setPlaceholder($scriptProperties['toPlaceholder'],$output);
+    return '';
+}
+return $output;

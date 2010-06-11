@@ -13,13 +13,21 @@ $mtime = $mtime[1] + $mtime[0];
 $tstart = $mtime;
 set_time_limit(0);
 
+/* set package info */
+define('PKG_NAME','getFeed');
+define('PKG_NAME_LOWER','getfeed');
+define('PKG_VERSION','1.0.0');
+define('PKG_RELEASE','beta1');
+
 /* define sources */
 $root = dirname(dirname(__FILE__)) . '/';
 $sources= array (
     'root' => $root,
     'build' => $root . '_build/',
     'lexicon' => $root . '_build/lexicon/',
-    'source_core' => $root,
+    'properties' => $root . '_build/properties/',
+    'docs' => $root . 'core/components/'.PKG_NAME_LOWER.'/docs/',
+    'source_core' => $root . 'core/components/'.PKG_NAME_LOWER,
 );
 unset($root);
 
@@ -31,25 +39,21 @@ $modx->initialize('mgr');
 $modx->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
-/* set package info */
-define('PKG_NAME','getfeed');
-define('PKG_VERSION','1.0.0');
-define('PKG_RELEASE','beta');
 
 /* load builder */
 $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
-$builder->createPackage(PKG_NAME, PKG_VERSION, PKG_RELEASE);
-//$builder->registerNamespace('getfeed',false,true,'{core_path}components/getfeed/');
+$builder->createPackage(PKG_NAME_LOWER, PKG_VERSION, PKG_RELEASE);
+$builder->registerNamespace(PKG_NAME_LOWER,false,true,'{core_path}components/'.PKG_NAME_LOWER.'/');
 
 /* create snippet object */
 $modx->log(xPDO::LOG_LEVEL_INFO,'Adding in snippet.'); flush();
 $snippet= $modx->newObject('modSnippet');
 $snippet->set('name', 'getFeed');
-$snippet->set('description', '<strong>'.PKG_VERSION.'-'.PKG_RELEASE.'</strong> A simple RSS feed client component for MODx Revolution');
+$snippet->set('description', '<b>'.PKG_VERSION.'-'.PKG_RELEASE.'</b> A simple RSS feed client component for MODx Revolution');
 $snippet->set('category', 0);
 $snippet->set('snippet', file_get_contents($sources['source_core'] . '/snippet.getfeed.php'));
-$properties = include $sources['build'].'properties.inc.php';
+$properties = include $sources['properties'].'properties.inc.php';
 $snippet->setProperties($properties);
 unset($properties);
 
@@ -68,8 +72,8 @@ $builder->putVehicle($vehicle);
 
 /* now pack in the license file, readme and setup options */
 $builder->setPackageAttributes(array(
-    'license' => file_get_contents($sources['source_core'] . '/docs/license.txt'),
-    'readme' => file_get_contents($sources['source_core'] . '/docs/readme.txt'),
+    'license' => file_get_contents($sources['docs'] . 'license.txt'),
+    'readme' => file_get_contents($sources['docs'] . 'readme.txt'),
 ));
 
 /* zip up the package */
