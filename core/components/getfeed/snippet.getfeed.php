@@ -4,7 +4,9 @@
  *
  * A simple snippet to retrieve an RSS feed and iterate the feed items using a Chunk.
  *
- * @author Jason Coward <modx@opengeek.com>
+ * @author Jason Coward <jason@modxcms.com>
+ * @author Shaun McCormick <shaun@modxcms.com>
+ *
  * @version 1.0.0-beta
  * @copyright Copyright 2010 by Jason Coward
  * @license http://www.gnu.org/licenses/gpl.txt GPLv3
