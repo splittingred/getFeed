@@ -28,10 +28,10 @@ if (!empty($url) && $modx->getService('rss', 'xmlrss.modRSSParser')) {
                 if (!empty($tpl)) {
                     $output[] = $modx->getChunk($tpl, $item);
                 } else {
-                    $output[] = '<pre>' . print_r($item, true) . '</pre>';
+                    $output[] = '<pre>'.$idx.': ' . print_r($item, true) . '</pre>';
                 }
                 $itemIdx++;
-                if ($limit > 0 && $itemIdx > $limit) break;
+                if ($limit > 0 && $itemIdx+1 > $limit) break;
             }
             $idx++;
         }
