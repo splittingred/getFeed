@@ -11,6 +11,10 @@
  * @copyright Copyright 2010 by Jason Coward
  * @license http://www.gnu.org/licenses/gpl.txt GPLv3
  */
+if (!defined('MAGPIE_OUTPUT_ENCODING')) {
+    $outputEncoding = $modx->getOption('outputEncoding',$scriptProperties,'UTF-8');
+    define('MAGPIE_OUTPUT_ENCODING',$outputEncoding);
+}
 $limit = isset($limit) ? (integer) $limit : 0;
 $offset = isset($offset) ? (integer) $offset : 0;
 $totalVar = !empty($totalVar) ? $totalVar : 'total';

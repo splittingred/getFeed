@@ -54,6 +54,14 @@ $properties = array (
         'value' => '',
 
     ),
+    'outputEncoding' => array (
+        'name' => 'outputEncoding',
+        'desc' => 'Sets the encoding for the Magpie RSS loader.',
+        'type' => 'textfield',
+        'options' => '',
+        'value' => 'UTF-8',
+
+    ),
 );
 
 return $properties;
