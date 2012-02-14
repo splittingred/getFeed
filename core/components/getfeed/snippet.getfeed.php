@@ -30,7 +30,11 @@ if (!empty($url) && $modx->getService('rss', 'xmlrss.modRSSParser')) {
         while (list($itemKey, $item) = each($rss->items)) {
             if ($idx >= $offset) {
                 if (!empty($tpl)) {
-                    $output[] = $modx->getChunk($tpl, $item);
+    	            if (!empty($tplLast) && $limit > 0 && $itemIdx+1 == $limit) {
+		                $output[] = $modx->getChunk($tplLast, $item);
+	                } else {
+                        $output[] = $modx->getChunk($tpl, $item);
+	                }
                 } else {
                     $output[] = '<pre>'.$idx.': ' . print_r($item, true) . '</pre>';
                 }
