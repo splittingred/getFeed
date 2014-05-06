@@ -29,6 +29,13 @@ if (!empty($url) && $modx->getService('rss', 'xmlrss.modRSSParser')) {
         $idx = 0;
         while (list($itemKey, $item) = each($rss->items)) {
             if ($idx >= $offset) {
+                foreach ($item as $k => $v) {
+                    if (is_array($v)) {
+                        foreach ($v as $k2 => $v2) {
+                            $item[$k . '-' . $k2] = $v2;
+                        }
+                    }
+                }
                 if (!empty($tpl)) {
                     $output[] = $modx->getChunk($tpl, $item);
                 } else {
